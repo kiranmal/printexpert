@@ -15,17 +15,17 @@ const PORT = Number(process.env.PORT) || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || "printexpert_secret_key_2026";
 
 /* =========================================================
-   MIDDLEWARE
-========================================================= */
-
-/* =========================================================
-   MIDDLEWARE — CORS FIX FOR VERCEL
+   MIDDLEWARE — CORS AND REQUEST PARSING
 ========================================================= */
 
 const allowedOrigins = [
+  "https://printexpert.vercel.app",
+  "https://printexpert-svye.vercel.app",
+
   "http://localhost:5173",
   "http://localhost:5174",
   "http://localhost:3000",
+
   "http://127.0.0.1:5173",
   "http://127.0.0.1:5174",
   "http://127.0.0.1:3000",
@@ -34,75 +34,64 @@ const allowedOrigins = [
   process.env.SITE_URL,
 
   ...(process.env.CORS_ORIGINS || "").split(","),
-
-  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "",
 ]
   .filter(Boolean)
   .map((origin) => origin.trim().replace(/\/+$/, ""));
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin) {
+const corsOptions = {
+  origin(origin, callback) {
+    // Allow requests without an Origin header.
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    const normalizedOrigin = origin.trim().replace(/\/+$/, "");
+
+    // Allow explicitly configured frontend origins.
+    if (allowedOrigins.includes(normalizedOrigin)) {
+      return callback(null, true);
+    }
+
+    // Allow HTTPS Vercel deployments belonging to PrintExpert.
+    try {
+      const url = new URL(normalizedOrigin);
+
+      const isPrintExpertPreview =
+        url.protocol === "https:" &&
+        /^printexpert(?:-[a-z0-9-]+)*\.vercel\.app$/i.test(url.hostname);
+
+      if (isPrintExpertPreview) {
         return callback(null, true);
       }
+    } catch (error) {
+      console.error("Invalid request origin:", origin);
+    }
 
-      const normalizedOrigin = origin.trim().replace(/\/+$/, "");
+    console.error("CORS blocked origin:", origin);
+    return callback(new Error("Origin not allowed by CORS"));
+  },
 
-      if (allowedOrigins.includes(normalizedOrigin)) {
-        return callback(null, true);
-      }
+  credentials: true,
 
-      console.error("CORS origin not allowed:", origin);
-      return callback(null, false);
-    },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
 
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "X-Requested-With",
-      "x-razorpay-signature",
-    ],
-  }),
-);
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "X-Requested-With",
+    "x-razorpay-signature",
+  ],
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // Allow requests that do not send an Origin header.
-      if (!origin) {
-        return callback(null, true);
-      }
+  optionsSuccessStatus: 204,
+};
 
-      const normalizedOrigin = origin.trim().replace(/\/+$/, "");
+// Register CORS only once, before your API routes.
+app.use(cors(corsOptions));
 
-      if (allowedOrigins.includes(normalizedOrigin)) {
-        return callback(null, true);
-      }
+// Handle browser preflight requests.
+app.options(/.*/, cors(corsOptions));
 
-      console.error("CORS origin not allowed:", origin);
-
-      // Do not throw an error that turns CORS failures into
-      // confusing backend errors.
-      return callback(null, false);
-    },
-
-    credentials: true,
-
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "X-Requested-With",
-      "x-razorpay-signature",
-    ],
-  }),
-);
-
-/* Parse JSON requests and preserve Razorpay webhook raw body. */
+// Parse JSON and preserve the raw Razorpay webhook body.
 app.use(
   express.json({
     limit: "30mb",
@@ -117,13 +106,13 @@ app.use(
   }),
 );
 
+// Parse URL-encoded request bodies only once.
 app.use(
   express.urlencoded({
     extended: true,
     limit: "30mb",
   }),
 );
-app.use(express.urlencoded({ extended: true, limit: "30mb" }));
 
 /* =========================================================
    MYSQL DATABASE
