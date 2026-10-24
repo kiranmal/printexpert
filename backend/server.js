@@ -18,26 +18,31 @@ const JWT_SECRET = process.env.JWT_SECRET || "printexpert_secret_key_2026";
    MIDDLEWARE
 ========================================================= */
 
-const cors = require("cors");
+/* =========================================================
+   MIDDLEWARE — CORS FIX FOR VERCEL
+========================================================= */
 
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
+  "http://localhost:3000",
   "http://127.0.0.1:5173",
   "http://127.0.0.1:5174",
-  "http://localhost:3000",
   "http://127.0.0.1:3000",
+
   process.env.CLIENT_URL,
   process.env.SITE_URL,
+
+  ...(process.env.CORS_ORIGINS || "").split(","),
+
+  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "",
 ]
   .filter(Boolean)
-  .map((url) => url.trim().replace(/\/+$/, ""));
+  .map((origin) => origin.trim().replace(/\/+$/, ""));
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests without an Origin header,
-      // such as server-to-server requests.
       if (!origin) {
         return callback(null, true);
       }
@@ -48,28 +53,74 @@ app.use(
         return callback(null, true);
       }
 
-      console.error("Blocked CORS origin:", origin);
+      console.error("CORS origin not allowed:", origin);
+      return callback(null, false);
+    },
 
-      return callback(new Error("Origin not allowed by CORS"));
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "x-razorpay-signature",
+    ],
+  }),
+);
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests that do not send an Origin header.
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      const normalizedOrigin = origin.trim().replace(/\/+$/, "");
+
+      if (allowedOrigins.includes(normalizedOrigin)) {
+        return callback(null, true);
+      }
+
+      console.error("CORS origin not allowed:", origin);
+
+      // Do not throw an error that turns CORS failures into
+      // confusing backend errors.
+      return callback(null, false);
     },
 
     credentials: true,
 
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
 
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "x-razorpay-signature",
+    ],
+  }),
+);
+
+/* Parse JSON requests and preserve Razorpay webhook raw body. */
+app.use(
+  express.json({
+    limit: "30mb",
+    verify: (req, res, buf) => {
+      if (
+        req.originalUrl &&
+        req.originalUrl.includes("/api/payments/razorpay/webhook")
+      ) {
+        req.rawBody = buf;
+      }
+    },
   }),
 );
 
 app.use(
-  express.json({
+  express.urlencoded({
+    extended: true,
     limit: "30mb",
-    /* raw body capture � Razorpay webhook HMAC */
-    verify: (req, _res, buf) => {
-      if (req.originalUrl?.includes("/api/payments/razorpay/webhook")) {
-        req.rawBody = buf;
-      }
-    },
   }),
 );
 app.use(express.urlencoded({ extended: true, limit: "30mb" }));
