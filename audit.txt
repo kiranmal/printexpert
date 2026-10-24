@@ -1,0 +1,16 @@
+﻿python : Traceback (most recent call last):
+At line:1 char:1
++ python -c "from pypdf import PdfReader; r=PdfReader(r'C:\Users\acer\D ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<string>", line 1, in <module>
+    from pypdf import PdfReader; r=PdfReader(r'C:\Users\acer\Downloads\My Projects\Technical Audit Report_ E-Commerce 
+Build (1).pdf'); print('\n'.join((p.extract_text() or '') for p in r.pages))
+                                                                                                                       
+                ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u20b9' in position 1261: character maps to <undefined>

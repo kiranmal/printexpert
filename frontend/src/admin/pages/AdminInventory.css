@@ -1,0 +1,138 @@
+.admin-inventory-page {
+  width: 100%;
+}
+
+.inventory-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.inventory-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #f366aa;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.admin-inventory-page .page-heading h2 {
+  color: #191a1f;
+}
+
+.inventory-refresh-btn,
+.inventory-update-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.inventory-refresh-btn {
+  min-height: 42px;
+  padding: 0 16px;
+  color: #374151;
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+}
+
+.inventory-refresh-btn:hover,
+.inventory-update-btn:hover {
+  transform: translateY(-1px);
+}
+
+.inventory-update-btn {
+  min-width: 118px;
+  min-height: 36px;
+  padding: 0 14px;
+  color: #ffffff;
+  background: #191a1f;
+  box-shadow: 0 7px 18px rgba(25, 26, 31, 0.16);
+}
+
+.inventory-update-btn:hover {
+  background: #f366aa;
+  box-shadow: 0 9px 22px rgba(243, 102, 170, 0.24);
+}
+
+.inventory-refresh-btn:disabled,
+.inventory-update-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.inventory-panel {
+  overflow: hidden;
+}
+
+.inventory-stock {
+  color: #191a1f;
+  font-size: 15px;
+}
+
+.inventory-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.inventory-status.in-stock {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.inventory-status.low-stock {
+  color: #a16207;
+  background: #fef3c7;
+}
+
+.inventory-status.out-of-stock {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.inventory-state {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 30px;
+  color: #64748b;
+  text-align: center;
+}
+
+.inventory-state strong {
+  color: #191a1f;
+  font-size: 17px;
+}
+
+.inventory-state span {
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .inventory-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .inventory-refresh-btn {
+    width: 100%;
+  }
+}

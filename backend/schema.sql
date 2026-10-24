@@ -1,0 +1,8 @@
+-- =====================================================
+-- PRINT EXPERT -- DATABASE SCHEMA
+--
+-- The full, current schema (all tables + starter data)
+-- now lives in:  printexpert_database.sql
+--
+--   mysql -u root -p < printexpert_database.sql
+-- =====================================================

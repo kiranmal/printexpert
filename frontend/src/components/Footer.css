@@ -1,0 +1,669 @@
+/* =========================================
+   PREMIUM ECOMMERCE FOOTER
+========================================= */
+
+.premium-footer {
+  width: 100%;
+  background: #191a1f;
+  color: #ffffff;
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+.footer-newsletter {
+  width: 100%;
+  background: #212329;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.newsletter-content {
+  max-width: 1400px;
+  margin: auto;
+  padding: 45px 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.newsletter-small {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #9ca3af;
+}
+
+.newsletter-content h2 {
+  margin: 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.newsletter-content p {
+  margin: 0;
+  max-width: 600px;
+  color: #aeb7c6;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* Newsletter Form */
+
+.newsletter-form {
+  display: flex;
+  min-width: 420px;
+  height: 50px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+
+  border: 1px solid #374151;
+  border-right: none;
+
+  background: #191a1f;
+  color: white;
+
+  padding: 0 18px;
+  outline: none;
+
+  border-radius: 7px 0 0 7px;
+}
+
+.newsletter-form input::placeholder {
+  color: #6b7280;
+}
+
+.newsletter-form button {
+  border: none;
+  padding: 0 25px;
+
+  background: #ffffff;
+  color: #191a1f;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  border-radius: 0 7px 7px 0;
+
+  transition: 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #e5e7eb;
+}
+
+
+/* =========================================
+   MAIN FOOTER
+========================================= */
+
+.footer-main {
+  max-width: 1400px;
+  margin: auto;
+
+  padding: 65px 6%;
+
+  display: grid;
+
+  grid-template-columns:
+    1.7fr
+    1fr
+    1fr
+    1.1fr
+    1fr;
+
+  gap: 50px;
+}
+
+
+/* =========================================
+   COMPANY
+========================================= */
+
+.footer-company h2 {
+  margin: 0;
+
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.footer-company h3 {
+  margin: 3px 0 20px;
+
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #9ca3af;
+}
+
+.footer-company > p {
+  max-width: 320px;
+
+  color: #9ca3af;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.footer-contact {
+  margin-top: 20px;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 12px 0;
+
+  color: #b8c0cc;
+
+  font-size: 13px;
+}
+
+.footer-contact strong {
+  width: 25px;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   FOOTER COLUMNS
+========================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column h3 {
+  margin: 0 0 22px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+
+  display: block;
+
+  width: 28px;
+  height: 2px;
+
+  background: #ffffff;
+
+  margin-top: 9px;
+}
+
+.footer-column > a {
+  width: fit-content;
+
+  text-decoration: none;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+
+  margin: 7px 0;
+
+  transition: 0.25s ease;
+}
+
+.footer-column > a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #374151;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition: 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: #ffffff;
+  color: #191a1f;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   TRUST SECTION
+========================================= */
+
+.footer-trust {
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 30px 6%;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+.trust-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.trust-item > span {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #374151;
+
+  border-radius: 50%;
+
+  font-size: 18px;
+}
+
+.trust-item strong {
+  display: block;
+
+  font-size: 13px;
+
+  margin-bottom: 4px;
+}
+
+.trust-item p {
+  margin: 0;
+
+  color: #8f98a7;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   BOTTOM FOOTER
+========================================= */
+
+.footer-bottom {
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 25px 6%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+}
+
+.footer-bottom-left p {
+  margin: 0;
+
+  color: #737d8c;
+
+  font-size: 11px;
+}
+
+.footer-bottom-left strong {
+  color: #b8c0cc;
+}
+
+
+/* =========================================
+   POLICIES
+========================================= */
+
+.footer-policies {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.footer-policies a {
+  color: #737d8c;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  transition: 0.3s ease;
+}
+
+.footer-policies a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   PAYMENT METHODS
+========================================= */
+
+.payment-methods {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.payment-methods span {
+  background: #27282f;
+
+  border: 1px solid #374151;
+
+  padding: 6px 9px;
+
+  border-radius: 4px;
+
+  font-size: 9px;
+
+  color: #cbd5e1;
+}
+
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .footer-main {
+    grid-template-columns:
+      1.5fr
+      1fr
+      1fr;
+
+    gap: 45px;
+  }
+
+  .footer-company {
+    grid-row: span 2;
+  }
+
+  .footer-trust {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter-content {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .newsletter-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 40px 6%;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 50px 6%;
+
+    gap: 40px 30px;
+  }
+
+  .footer-company {
+    grid-row: auto;
+
+    grid-column: span 2;
+  }
+
+  .footer-trust {
+    padding: 25px 6%;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+
+    text-align: center;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+  .footer-newsletter {
+    text-align: left;
+  }
+
+  .newsletter-content {
+    padding: 35px 20px;
+  }
+
+  .newsletter-content h2 {
+    font-size: 22px;
+  }
+
+  .newsletter-content p {
+    font-size: 13px;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    height: 46px;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .newsletter-form button {
+    padding: 0 16px;
+
+    font-size: 12px;
+  }
+
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    padding: 45px 20px;
+
+    gap: 35px;
+  }
+
+  .footer-company {
+    grid-column: auto;
+  }
+
+  .footer-company h2 {
+    font-size: 26px;
+  }
+
+
+  .footer-trust {
+    grid-template-columns: 1fr;
+
+    padding: 25px 20px;
+
+    gap: 20px;
+  }
+
+
+  .footer-bottom {
+    padding: 25px 20px;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .footer-policies {
+    justify-content: center;
+
+    gap: 12px 18px;
+  }
+
+  .payment-methods {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .newsletter-form {
+    flex-direction: column;
+
+    height: auto;
+
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    height: 45px;
+
+    border-right: 1px solid #374151;
+
+    border-radius: 6px;
+  }
+
+  .newsletter-form button {
+    height: 45px;
+
+    border-radius: 6px;
+  }
+
+  .footer-social a {
+    width: 33px;
+    height: 33px;
+  }
+
+}
+
+/* =========================================
+   PRINT EXPERT — BRAND
+========================================= */
+
+.premium-footer {
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      #191b21 0 25%,
+      #e72183 25% 50%,
+      #0190d9 50% 75%,
+      #fad303 75% 100%
+    )
+    1;
+}
+
+.footer-company .footer-logo {
+  display: block;
+  width: auto;
+  height: 62px;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.footer-company h2 b {
+  color: #e72183;
+  font-weight: 800;
+}
+
+.footer-company h3 {
+  letter-spacing: 2.5px;
+}

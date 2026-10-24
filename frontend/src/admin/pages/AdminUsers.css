@@ -1,0 +1,508 @@
+/* =====================================================
+   ADMIN USERS — LIGHT THEME
+   PRINT EXPERT
+   (Scoped under .admin-users-page)
+===================================================== */
+
+.admin-users-page {
+  width: 100%;
+
+  padding-bottom: 40px;
+}
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
+
+.admin-users-page .page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-bottom: 28px;
+  padding: 5px 0;
+}
+
+.admin-users-page .page-heading h2 {
+  margin: 0;
+
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+
+  color: #191a1f;
+}
+
+.admin-users-page .page-heading p {
+  margin: 7px 0 0;
+
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* =====================================================
+   USER STATS
+===================================================== */
+
+.admin-users-page .user-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.admin-users-page .user-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 20px;
+
+  border: 1px solid #e9edf2;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      160deg,
+      #ffffff 0%,
+      #fafbfc 100%
+    );
+
+  box-shadow:
+    0 6px 20px
+    rgba(25, 26, 31, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-users-page .user-stat-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 32px
+    rgba(25, 26, 31, 0.09);
+}
+
+.admin-users-page .user-stat-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  font-size: 22px;
+}
+
+.admin-users-page .user-stat-icon.total {
+  background: #fef0f7;
+}
+
+.admin-users-page .user-stat-icon.active {
+  background: #dcfce7;
+}
+
+.admin-users-page .user-stat-icon.blocked {
+  background: #fee2e2;
+}
+
+.admin-users-page .user-stat-card small {
+  display: block;
+
+  color: #6b7280;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-users-page .user-stat-card strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #191a1f;
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.admin-users-page .user-stat-card p {
+  margin: 4px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.admin-users-page .panel {
+  padding: 22px;
+
+  border: 1px solid #e9edf2;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 6px 20px
+    rgba(25, 26, 31, 0.05);
+}
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.admin-users-page .toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.admin-users-page .search-input {
+  flex: 1;
+
+  min-width: 220px;
+  max-width: 420px;
+
+  height: 42px;
+  padding: 0 14px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  background: #f9fafb;
+
+  color: #191a1f;
+  font-size: 13px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-users-page .search-input::placeholder {
+  color: #9ca3af;
+}
+
+.admin-users-page .search-input:focus {
+  border-color: #f799c6;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(235, 37, 133, 0.08);
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.admin-users-page .table-wrap {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #f0f2f5;
+  border-radius: 12px;
+}
+
+.admin-users-page .admin-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 700px;
+}
+
+.admin-users-page .admin-table thead {
+  background: #f9fafb;
+}
+
+.admin-users-page .admin-table th {
+  padding: 13px 16px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: left;
+
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  white-space: nowrap;
+}
+
+.admin-users-page .admin-table td {
+  padding: 14px 16px;
+
+  color: #374151;
+
+  font-size: 13px;
+
+  border-bottom: 1px solid #f0f2f5;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.admin-users-page .admin-table tbody tr {
+  transition:
+    background 0.2s ease;
+}
+
+.admin-users-page .admin-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.admin-users-page .admin-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* =====================================================
+   USER CELL
+===================================================== */
+
+.admin-users-page .user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-users-page .user-avatar {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fcddec,
+      #fac3de
+    );
+
+  color: #d81d77;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.admin-users-page .user-cell strong {
+  display: block;
+
+  color: #191a1f;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-users-page .user-cell small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+/* =====================================================
+   ORDERS COUNT
+===================================================== */
+
+.admin-users-page .orders-count {
+  display: inline-flex;
+
+  min-width: 34px;
+  height: 30px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 10px;
+
+  border-radius: 8px;
+
+  background: #f9f1f5;
+
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.admin-users-page .status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 80px;
+
+  padding: 5px 11px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-users-page .status.delivered {
+  background: #dcfce7;
+
+  color: #166534;
+}
+
+.admin-users-page .status.cancelled {
+  background: #fee2e2;
+
+  color: #b91c1c;
+}
+
+/* =====================================================
+   ACTION BUTTON
+===================================================== */
+
+.admin-users-page .user-action {
+  min-height: 34px;
+
+  padding: 0 14px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.admin-users-page .user-action.block {
+  color: #dc2626;
+}
+
+.admin-users-page .user-action.block:hover {
+  border-color: #fecaca;
+
+  background: #fef2f2;
+}
+
+.admin-users-page .user-action.unblock {
+  color: #16a34a;
+}
+
+.admin-users-page .user-action.unblock:hover {
+  border-color: #bbf7d0;
+
+  background: #f0fdf4;
+}
+
+.admin-users-page .user-action:hover {
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.admin-users-page .users-empty-cell {
+  padding: 45px 20px;
+
+  text-align: center;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .admin-users-page .user-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .admin-users-page .page-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .admin-users-page .toolbar {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .admin-users-page .search-input {
+    max-width: none;
+
+    width: 100%;
+  }
+
+  .admin-users-page .panel {
+    padding: 16px;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .admin-users-page .user-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-users-page .page-heading h2 {
+    font-size: 22px;
+  }
+
+}

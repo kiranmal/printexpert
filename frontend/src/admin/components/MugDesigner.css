@@ -1,0 +1,352 @@
+/* ============================================================
+   MUG DESIGNER — admin template designer
+============================================================ */
+
+.mug-designer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: #f5f7fa;
+}
+
+/* ---------- toolbar ---------- */
+.md-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.md-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+}
+
+.md-toolbar button:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.md-toolbar button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.md-sep {
+  width: 1px;
+  height: 20px;
+  background: #e5e7eb;
+}
+
+.md-zoom {
+  font-size: 11px;
+  color: #6b7280;
+  min-width: 38px;
+  text-align: center;
+}
+
+.md-spacer {
+  flex: 1;
+}
+
+.md-btn-ghost {
+  background: #fff !important;
+}
+
+.md-btn-primary {
+  background: #191a1f !important;
+  border-color: #191a1f !important;
+  color: #fff !important;
+}
+
+.md-btn-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- notices ---------- */
+.md-notice {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #fef3c7;
+  color: #92400e;
+  cursor: pointer;
+}
+
+.md-notice.warn {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+/* ---------- body layout ---------- */
+.md-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 240px;
+  gap: 14px;
+  padding: 14px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.md-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-height: 0;
+}
+
+.md-pane-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.md-hint {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* flat print-area editor */
+.md-canvas-wrap {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
+}
+
+.md-canvas {
+  position: relative;
+  background: #ffffff;
+  border: 2px dashed #f799c6;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* mug preview */
+.md-mug-box {
+  position: relative;
+  width: min(100%, 340px);
+  aspect-ratio: 6 / 5;
+}
+
+.md-mug-box .garment-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.md-mug-print {
+  position: absolute;
+  overflow: hidden;
+}
+
+/* elements */
+.md-el {
+  user-select: none;
+  touch-action: none;
+}
+
+.md-el img {
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.md-el.sel {
+  outline: 1.5px solid #df2880;
+  outline-offset: 2px;
+}
+
+.md-el-delete {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #e12432;
+  color: #fff;
+  font-size: 11px;
+  line-height: 18px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.md-el-resize {
+  position: absolute;
+  bottom: -9px;
+  right: -9px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #df2880;
+  cursor: nwse-resize;
+  z-index: 5;
+}
+
+.md-qr {
+  aspect-ratio: 1;
+  background: repeating-linear-gradient(
+    45deg,
+    #191a1f 0 2px,
+    transparent 2px 4px
+  );
+  border: 1px solid #191a1f;
+  border-radius: 2px;
+}
+
+/* inline text editor */
+.md-text-edit {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: 60px;
+  min-height: 30px;
+  padding: 2px 4px;
+  border: 1.5px solid #df2880;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.92);
+  outline: none;
+  resize: none;
+  z-index: 10;
+  white-space: pre-line;
+  line-height: 1.25;
+}
+
+/* ---------- properties panel ---------- */
+.md-props {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: start;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.md-props-empty {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.md-props-title {
+  font-size: 13px;
+  color: #191a1f;
+  text-transform: capitalize;
+}
+
+.md-props label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.md-props textarea,
+.md-props select {
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  padding: 7px 9px;
+  font-size: 12px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.md-props input[type="color"] {
+  width: 44px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.md-props input[type="range"] {
+  width: 100%;
+}
+
+.md-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.md-row button {
+  padding: 6px 9px;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  background: #fff;
+  cursor: pointer;
+  color: #374151;
+}
+
+.md-row button.on {
+  background: #191a1f;
+  color: #fff;
+  border-color: #191a1f;
+}
+
+.md-swatches {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.md-swatches button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.md-swatches button.on {
+  border-color: #df2880;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .md-body {
+    grid-template-columns: 1fr;
+  }
+
+  .md-props {
+    max-height: none;
+  }
+}

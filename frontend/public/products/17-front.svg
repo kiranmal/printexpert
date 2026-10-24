@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f7fb"/>
+      <stop offset="1" stop-color="#e4eaf2"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8ecf1"/>
+      <stop offset=".5" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#c9d1dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="500" fill="url(#bg)"/>
+  <ellipse cx="300" cy="432" rx="215" ry="26" fill="#000" opacity="0.1"/>
+  
+    <path d="M190 160 Q300 140 410 160 L430 410 Q300 425 170 410 Z" fill="#c8a56b" stroke="#a5854e"/>
+    <path d="M190 160 Q300 140 410 160 L412 180 Q300 162 188 180 Z" fill="#a5854e" opacity=".5"/>
+    <path d="M240 165 Q245 120 275 120" fill="none" stroke="#8a6d3f" stroke-width="6"/>
+    <path d="M360 165 Q355 120 325 120" fill="none" stroke="#8a6d3f" stroke-width="6"/>
+    <circle cx="300" cy="260" r="19.599999999999998" fill="none" stroke="#5a4526" stroke-width="4.199999999999999"/>
+   <text x="300" y="267" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="19.599999999999998" fill="#5a4526">A</text>
+    <rect x="245" y="300" width="110" height="8" rx="3" fill="#5a4526" opacity=".7"/>
+</svg>

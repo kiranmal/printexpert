@@ -1,0 +1,55 @@
+.brochure-artwork {
+  position: absolute;
+  inset: 13px 10px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.brochure-artwork-side {
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.brochure-artwork-sheet {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 297 / 210;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cbd4df;
+  box-shadow: 0 3px 8px rgba(20, 38, 58, 0.12);
+}
+
+.brochure-artwork-folds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.brochure-artwork-folds span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed rgba(49, 78, 108, 0.3);
+}
+
+.brochure-artwork-large {
+  inset: 18px;
+  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.brochure-artwork-large .brochure-artwork-label {
+  color: #526477;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+}

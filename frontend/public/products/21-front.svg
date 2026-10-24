@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f7fb"/>
+      <stop offset="1" stop-color="#e4eaf2"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8ecf1"/>
+      <stop offset=".5" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#c9d1dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="500" fill="url(#bg)"/>
+  <ellipse cx="300" cy="432" rx="215" ry="26" fill="#000" opacity="0.1"/>
+  
+    <path d="M190 260 Q190 150 300 150 Q410 150 410 260 Z" fill="#1d3252"/>
+    <path d="M190 260 Q300 235 445 258 Q470 264 465 280 Q455 300 420 292 Q300 268 190 268 Z" fill="#1d3252" stroke="#00000033"/>
+    <path d="M300 150 L300 258" stroke="#00000022" stroke-width="3"/>
+    <circle cx="255" cy="215" r="12.6" fill="none" stroke="#ffffff" stroke-width="2.7"/>
+   <text x="255" y="219.5" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="12.6" fill="#ffffff">A</text>
+</svg>

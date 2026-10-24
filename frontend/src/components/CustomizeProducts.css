@@ -1,0 +1,568 @@
+/* =========================================================
+   CUSTOMIZE PRODUCTS SECTION
+========================================================= */
+
+.customize-products-section {
+  width: 100%;
+  padding: 85px 6%;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.customize-heading {
+  margin-bottom: 45px;
+}
+
+.customize-heading > div > span {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: #f08a00;
+}
+
+.customize-heading h2 {
+  margin: 0;
+
+  color: #292a32;
+
+  font-size: 38px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+.customize-heading p {
+  max-width: 430px;
+
+  margin-top: 12px;
+
+  color: #697586;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.customize-product-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.customize-product-card {
+  position: relative;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.customize-product-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 18px 40px
+    rgba(41, 42, 50, .12);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.customize-product-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 285px;
+
+  overflow: hidden;
+
+  background: #f3f5f8;
+}
+
+.customize-product-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform .5s ease;
+}
+
+.customize-product-card:hover
+.customize-product-image img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.customize-product-badge {
+  position: absolute;
+
+  left: 14px;
+
+  top: 14px;
+
+  padding: 6px 10px;
+
+  border-radius: 5px;
+
+  background: #292a32;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: .6px;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.customize-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  padding: 18px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 38%,
+      rgba(41, 42, 50, .78)
+    );
+
+  opacity: 0;
+
+  transition: opacity .3s ease;
+}
+
+.customize-product-card:hover
+.customize-image-overlay {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   OVERLAY BUTTON
+========================================================= */
+
+.customize-image-overlay button {
+  width: 100%;
+
+  height: 43px;
+
+  border: 0;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #292a32;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+.customize-image-overlay button:hover {
+  background: #292a32;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.customize-product-content {
+  padding: 17px 18px 19px;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.customize-product-category {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  font-size: 9px;
+
+  color: #8a94a3;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.customize-product-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 8px;
+}
+
+.customize-product-rating span {
+  color: #f3a000;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+.customize-product-rating small {
+  color: #7a8492;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.customize-product-content h3 {
+  margin: 0;
+
+  color: #24262c;
+
+  font-size: 16px;
+
+  font-weight: 650;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.customize-product-content p {
+  min-height: 43px;
+
+  margin: 8px 0 14px;
+
+  color: #747f8e;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.customize-price-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+.customize-price {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.customize-price strong {
+  color: #292a32;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.customize-price del {
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.customize-product-actions {
+  width: 100%;
+}
+
+.customize-view-btn {
+  width: 100%;
+
+  height: 41px;
+
+  border: 1px solid #292a32;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #292a32;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+.customize-view-btn:hover {
+  background: #292a32;
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.customize-bottom-cta {
+  max-width: 100%;
+
+  min-height: 88px;
+
+  margin-top: 30px;
+
+  padding: 20px 25px;
+
+  border-radius: 10px;
+
+  background: #faf3f6;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border: 1px solid #e1e6ed;
+}
+
+.customize-bottom-cta > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.customize-bottom-cta strong {
+  color: #292a32;
+
+  font-size: 14px;
+}
+
+.customize-bottom-cta span {
+  color: #737e8d;
+
+  font-size: 11px;
+}
+
+.customize-bottom-cta button {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 0;
+
+  border-radius: 6px;
+
+  background: #292a32;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.customize-bottom-cta button:hover {
+  background: #383b45;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+  .customize-product-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .customize-products-section {
+    padding: 60px 18px;
+  }
+
+  .customize-heading {
+    display: block;
+  }
+
+  .customize-heading h2 {
+    font-size: 30px;
+  }
+
+  .customize-heading p {
+    margin-top: 18px;
+  }
+
+  .customize-product-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .customize-product-image {
+    height: 320px;
+  }
+
+  .customize-bottom-cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .customize-bottom-cta button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}

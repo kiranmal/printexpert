@@ -1,0 +1,2185 @@
+﻿/* =========================================================
+   CUSTOMIZER PAGE
+========================================================= */
+
+.customizer-page {
+  min-height: 100vh;
+  overflow-x: clip;
+  background: #ffffff;
+  color: #292a32;
+  font-family:
+    Inter,
+    Poppins,
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.customizer-title {
+  min-height: 96px;
+  border: 1px solid #e5e7eb;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  align-items: center;
+  padding: 0 28px;
+  background: #ffffff;
+}
+
+.back-product {
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #292a32;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.back-product:hover {
+  color: #961754;
+}
+
+.title-center {
+  text-align: center;
+}
+
+.title-center h1 {
+  margin: 0;
+  color: #1e2025;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.title-center p {
+  margin: 7px 0 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+.side-switch {
+  justify-self: end;
+  display: flex;
+  border: 1px solid #d7dce3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.side-switch button {
+  border: 0;
+  background: #ffffff;
+  padding: 11px 27px;
+  color: #334155;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-switch button.selected {
+  background: #343740;
+  color: white;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.customizer-main {
+  display: grid;
+  /* flexible columns â€” nothing can push past the viewport
+     and clip the toolbar on narrower desktops */
+  grid-template-columns:
+    96px
+    minmax(240px, 300px)
+    minmax(0, 1fr)
+    minmax(300px, 370px);
+  min-height: 775px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.customizer-main > * {
+  min-width: 0;
+}
+
+/* =========================================================
+   LEFT TOOLBAR
+========================================================= */
+
+.left-toolbar {
+  border-right: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 14px 10px;
+}
+
+.left-toolbar button {
+  width: 100%;
+  min-height: 66px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #343740;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.left-toolbar button svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 1.8;
+}
+
+.left-toolbar button:hover {
+  background: #fbf4f7;
+}
+
+.left-toolbar button.tool-active {
+  background: #feebf4;
+  color: #393c46;
+}
+
+/* =========================================================
+   SETTINGS PANEL
+========================================================= */
+
+.settings-panel {
+  border-right: 1px solid #e5e7eb;
+  background: #ffffff;
+  overflow-y: auto;
+}
+
+.settings-content {
+  padding: 20px;
+}
+
+.settings-content h3 {
+  margin: 0 0 17px;
+  color: #191a1f;
+  font-size: 16px;
+}
+
+.settings-content h4 {
+  margin: 21px 0 11px;
+  color: #27282f;
+  font-size: 13px;
+}
+
+/* =========================================================
+   TEXT INPUT
+========================================================= */
+
+.text-input,
+.font-select {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #d7dce3;
+  border-radius: 7px;
+  padding: 0 13px;
+  outline: none;
+  background: #ffffff;
+  color: #212329;
+  font-size: 14px;
+}
+
+.text-input:focus,
+.font-select:focus {
+  border-color: #91315f;
+  box-shadow: 0 0 0 3px rgba(145, 49, 95, 0.08);
+}
+
+/* =========================================================
+   FORMAT BUTTONS
+========================================================= */
+
+.format-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.format-buttons button {
+  height: 42px;
+  border: 1px solid #d8dde5;
+  border-radius: 7px;
+  background: white;
+  color: #34363f;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.format-buttons button:hover {
+  background: #fcf5f8;
+}
+
+.format-buttons button.active-format {
+  background: #feebf4;
+  border-color: #d286ab;
+  color: #393c46;
+}
+
+/* =========================================================
+   TEXT COLORS
+========================================================= */
+
+.color-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.text-color {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  outline: 1px solid #d5d9df;
+  cursor: pointer;
+}
+
+.text-color.selected-text-color {
+  outline: 2px solid #393c46;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RANGE
+========================================================= */
+
+.range-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.range-row span {
+  min-width: 22px;
+  color: #5d6675;
+  font-size: 12px;
+}
+
+.range-row input {
+  flex: 1;
+  accent-color: #393c46;
+}
+
+/* =========================================================
+   ALIGNMENT
+========================================================= */
+
+.alignment-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+
+.alignment-buttons button {
+  height: 44px;
+  border: 1px solid #d8dde5;
+  background: white;
+  border-radius: 7px;
+  color: #34363f;
+  cursor: pointer;
+}
+
+.alignment-buttons button:hover,
+.alignment-buttons button.selected-align {
+  background: #feebf4;
+  border-color: #d08eae;
+  color: #393c46;
+}
+
+/* =========================================================
+   UPLOAD
+========================================================= */
+
+.upload-area {
+  min-height: 180px;
+  border: 1.5px dashed #8ca5c4;
+  background: #fff8fb;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  cursor: pointer;
+  color: #40434e;
+}
+
+.upload-area:hover {
+  background: #fef1f7;
+  border-color: #91315f;
+}
+
+.upload-area strong {
+  font-size: 14px;
+}
+
+.upload-area span {
+  color: #718096;
+  font-size: 12px;
+}
+
+.uploaded-preview {
+  margin-top: 16px;
+  height: 100px;
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+}
+
+.uploaded-preview img {
+  max-width: 90px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.delete-logo-btn {
+  width: 100%;
+  height: 40px;
+  margin-top: 14px;
+  border: 1px solid #e4b5b5;
+  border-radius: 7px;
+  background: #fff6f6;
+  color: #b42318;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   FONT OPTIONS
+========================================================= */
+
+.font-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.font-options button {
+  min-height: 43px;
+  border: 1px solid #d9dee6;
+  background: white;
+  border-radius: 7px;
+  text-align: left;
+  padding: 0 13px;
+  cursor: pointer;
+}
+
+.font-options button.font-selected {
+  background: #feebf4;
+  border-color: #7e9fc7;
+  color: #393c46;
+}
+
+/* =========================================================
+   COLOR GRID
+========================================================= */
+
+.large-color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+}
+
+.large-color-grid button {
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid #d8dce3;
+  cursor: pointer;
+}
+
+.large-color-grid button.color-selected {
+  outline: 3px solid #393c46;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   POSITION
+========================================================= */
+
+.position-info {
+  color: #697586;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.position-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.position-buttons button {
+  min-height: 42px;
+  border: 1px solid #d6dce5;
+  background: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   LAYERS
+========================================================= */
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 7px 9px;
+  margin-bottom: 8px;
+  border: 1px solid #e1e5ea;
+  border-radius: 7px;
+  color: #34363f;
+}
+
+.layer-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* =========================================================
+   PRODUCT AREA
+========================================================= */
+
+.product-area {
+  background: linear-gradient(180deg, #f5f6f7 0%, #eef2f6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-canvas-wrapper {
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 18px 92px 18px 18px;
+}
+
+.product-canvas {
+  width: min(640px, 84%);
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+}
+
+.pen-product-canvas {
+  width: min(760px, 90%);
+  height: min(440px, 62vh);
+}
+
+.real-product-preview {
+  /* garment SVG (400x430) ke saath align â€” print-area % sahi banti hai */
+  height: 100%;
+  aspect-ratio: 400 / 430;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   REAL PRODUCT IMAGE
+========================================================= */
+
+/* image-based products â€” mockup 600x500, print-area % align */
+.real-product-preview.has-image {
+  aspect-ratio: 600 / 500;
+}
+
+.flyer-preview {
+  width: min(74%, 360px);
+  height: auto;
+  max-height: 92%;
+  filter: drop-shadow(0 18px 28px rgba(25, 26, 31, 0.18));
+}
+
+.brochure-product-canvas {
+  width: min(860px, 100%);
+  height: min(610px, 76vh);
+}
+
+.brochure-preview {
+  width: min(100%, 820px);
+  height: auto;
+  max-height: 94%;
+  aspect-ratio: 297 / 210;
+  filter: drop-shadow(0 8px 14px rgba(25, 26, 31, 0.13));
+}
+
+.brochure-sheet {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #cbd4df;
+}
+
+.brochure-fold-guides {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.brochure-fold-guides span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed rgba(49, 78, 108, 0.34);
+}
+
+.flyer-sheet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d8dfe8;
+  border-radius: 6px;
+}
+
+.flyer-hero {
+  height: 32%;
+  background: #e1523d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flyer-hero span {
+  width: 15%;
+  aspect-ratio: 1;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.flyer-back-band {
+  height: 20%;
+  background: #e1523d;
+}
+
+.flyer-rule {
+  height: 1.6%;
+  margin: 6% auto 0;
+  width: 78%;
+  border-radius: 99px;
+  background: #c8d2de;
+}
+
+.flyer-rule-strong {
+  height: 4%;
+  width: 72%;
+  margin-top: 9%;
+  background: #31333c;
+}
+
+.flyer-rule-short {
+  width: 58%;
+}
+
+.flyer-rule-mid {
+  width: 68%;
+}
+
+.flyer-cta {
+  position: absolute;
+  left: 12%;
+  bottom: 7%;
+  width: 38%;
+  height: 8%;
+  border-radius: 999px;
+  background: #e1523d;
+}
+
+.flyer-sheet-dl .flyer-hero {
+  height: 25%;
+}
+
+.flyer-sheet-dl .flyer-rule {
+  margin-top: 10%;
+}
+
+.selected-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* =========================================================
+   GARMENT MOCKUP (vector t-shirt)
+========================================================= */
+
+.garment-svg {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.18));
+}
+
+/* notebook mockup â€” different aspect ratio */
+.notebook-preview {
+  aspect-ratio: 380 / 480 !important;
+}
+
+/* pen mockup â€” halka tilt; print-area + elements
+   iske saath rotate hote hain (text pen ke angle
+   ko follow karta hai) */
+.pen-preview {
+  width: min(84%, 660px);
+  max-width: 660px;
+  height: auto;
+  aspect-ratio: 600 / 500;
+  transform: rotate(-7deg) scale(1.08);
+  filter: drop-shadow(0 18px 28px rgba(25, 26, 31, 0.18));
+}
+
+.pen-product-canvas .real-product-preview {
+  width: 100%;
+  max-width: 660px;
+}
+
+/* envelope mockup â€” landscape; aspect size ke hisaab se
+   inline style se aata hai */
+.envelope-preview {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+.envelope-svg {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.16));
+}
+
+/* spiral rings â€” design layer ke UPAR, clicks block nahi karte */
+.spiral-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.2));
+}
+
+.qr-pattern {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   TEMPLATES
+========================================================= */
+
+.template-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.template-btn {
+  min-height: 54px;
+  border: 1px solid #d6dce5;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+  padding: 8px 13px;
+  text-align: left;
+}
+
+.template-btn:hover {
+  background: #feebf4;
+  border-color: #d08eae;
+}
+
+.template-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #31333c;
+}
+
+.template-desc {
+  font-size: 11px;
+  color: #7a8493;
+}
+
+/* =========================================================
+   PRINT AREA â€” design yahan clipped rehta hai
+========================================================= */
+
+.print-area {
+  position: absolute;
+  width: 46%;
+  height: 38%;
+  top: 20%;
+  left: 27%;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+/* editing mein printable boundary dikhti hai */
+.print-area.editing {
+  border: 1.5px dashed rgba(235, 37, 133, 0.55);
+  border-radius: 6px;
+  background: rgba(235, 37, 133, 0.03);
+}
+
+/* notebook print area â€” spiral ke RIGHT side, safe margins */
+.print-area-notebook {
+  left: 17%;
+  top: 9%;
+  width: 70%;
+  height: 78%;
+}
+
+.print-area.preview-clean {
+  border: 0;
+  background: transparent;
+}
+
+.print-area-flyer {
+  border-radius: 4px;
+}
+
+.print-area-brochure {
+  border-radius: 0;
+}
+
+.print-area-brochure.editing {
+  border: 1px dashed rgba(49, 78, 108, 0.18);
+  background: transparent;
+}
+
+.print-area-brochure .design-text {
+  padding: 1px 3px;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.print-area-flyer .design-text {
+  max-width: 100%;
+  padding: 0 2px;
+}
+
+.design-el {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  cursor: move;
+  user-select: none;
+  touch-action: none;
+}
+
+.design-text {
+  /* multiline + wrapping; canvas se bahar overflow na ho */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: normal;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 85%;
+  max-height: 90%;
+  overflow: hidden;
+  line-height: 1.15;
+}
+
+.design-image-el img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* selected element box */
+.design-el.el-selected {
+  outline: 1.5px solid #eb2585;
+  outline-offset: 3px;
+}
+
+.el-delete,
+.el-resize {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.el-delete {
+  top: -12px;
+  right: -12px;
+  background: #e12432;
+}
+
+.el-resize {
+  right: -12px;
+  bottom: -12px;
+  background: #393c46;
+  cursor: nwse-resize;
+}
+
+/* =========================================================
+   QUICK ADD (company/person/designation)
+========================================================= */
+
+.quick-add-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-add-btn {
+  min-height: 42px;
+  border: 1px solid #d6dce5;
+  background: white;
+  border-radius: 7px;
+  color: #31333c;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  text-align: left;
+}
+
+.quick-add-btn:hover {
+  background: #feebf4;
+  border-color: #d08eae;
+}
+
+.quick-add-btn svg {
+  color: #3c3e49;
+}
+
+/* =========================================================
+   LAYERS PANEL
+========================================================= */
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 7px 9px;
+  margin-bottom: 8px;
+  border: 1px solid #e1e5ea;
+  border-radius: 7px;
+  color: #34363f;
+  cursor: pointer;
+}
+
+.layer-item.layer-selected {
+  border-color: #eb2585;
+  background: #feeff6;
+}
+
+.layer-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.layer-label {
+  flex: 1;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.layer-actions {
+  display: flex;
+  gap: 3px;
+}
+
+.layer-actions button {
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #4b5d75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.layer-actions button:hover {
+  background: #f5dde9;
+}
+
+.layer-actions button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* =========================================================
+   PREVIEW MODE
+========================================================= */
+
+.preview-main {
+  min-height: 720px;
+  background: #f4f6f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px 45px;
+}
+
+.preview-stage {
+  width: min(560px, 92vw);
+  aspect-ratio: 400 / 430;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-stage .product-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.preview-stage .real-product-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.preview-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.preview-actions .add-cart-btn,
+.preview-actions .save-design-btn {
+  width: auto;
+  min-width: 210px;
+  padding: 0 26px;
+  margin-top: 0;
+}
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.back-preview-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(41, 42, 50, 0.3);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   CANVAS TOOLS
+========================================================= */
+
+.canvas-tools {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 90px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid #e0e4ea;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(25, 26, 31, 0.08);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 8px;
+}
+
+.canvas-tools button {
+  width: 100%;
+  min-height: 62px;
+  border: 1px solid #edf0f3;
+  border-radius: 10px;
+  background: white;
+  color: #32465e;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.canvas-tools button:hover {
+  background: #fef8fb;
+}
+
+.canvas-tools button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.canvas-tools svg {
+  width: 18px;
+}
+
+.canvas-tools span {
+  font-size: 10px;
+}
+
+/* =========================================================
+   THUMBNAIL
+========================================================= */
+.product-thumbnails {
+  height: 100px;
+  background: white;
+  border-top: 1px solid #e3e6eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumb {
+  width: 80px;
+  height: 75px;
+  border: 1px solid #d8dde4;
+  border-radius: 9px;
+  overflow: hidden;
+  background: #f7f7f7;
+  padding: 4px;
+}
+
+.active-thumb {
+  border: 2px solid #3c3e49;
+}
+
+.thumbnail-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mini-shirt {
+  width: 45px;
+  height: 52px;
+  margin: 8px auto;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   RIGHT PRODUCT SETTINGS
+========================================================= */
+
+.product-settings {
+  background: white;
+  padding: 22px 23px;
+  overflow-y: auto;
+  max-height: 875px;
+}
+
+.selected-product-info > span {
+  font-size: 11px;
+  font-weight: 800;
+  color: #718096;
+  letter-spacing: 0.7px;
+}
+
+.selected-product-info h2 {
+  margin: 7px 0 10px;
+  color: #1c1d22;
+  font-size: 22px;
+}
+
+.selected-product-info p {
+  margin: 0 0 19px;
+  color: #4b5565;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.product-settings h3 {
+  margin: 16px 0 12px;
+  font-size: 13px;
+  color: #24262c;
+}
+
+/* =========================================================
+   PRODUCT COLORS
+========================================================= */
+
+.product-colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.product-color {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid white;
+  outline: 1px solid #cfd5dd;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(25, 26, 31, 0.08);
+}
+
+.product-color.selected-product-color {
+  outline: 2px solid #393c46;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(57, 60, 70, 0.12);
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.setting-divider {
+  height: 1px;
+  background: #e6e9ee;
+  margin: 17px 0;
+}
+
+/* =========================================================
+   SIZE
+========================================================= */
+
+.size-options {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.size-options button {
+  min-width: 68px;
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #d4d9e0;
+  border-radius: 8px;
+  background: white;
+  color: #34363f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.size-options button:hover {
+  border-color: #6c8eb7;
+  box-shadow: 0 4px 12px rgba(57, 60, 70, 0.08);
+}
+
+.size-options button.size-selected {
+  background: #393c46;
+  color: white;
+  border-color: #393c46;
+  box-shadow: 0 8px 18px rgba(57, 60, 70, 0.18);
+}
+
+/* =========================================================
+   CUSTOMER REQUEST BOX
+   NEW
+========================================================= */
+
+.customer-request-box {
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  padding: 13px;
+  margin-bottom: 12px;
+  background: #ffffff;
+}
+
+.customer-request-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 10px;
+}
+
+.customer-request-title svg {
+  color: #3c3e49;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.customer-request-title div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.customer-request-title strong {
+  font-size: 13px;
+  color: #22242a;
+}
+
+.customer-request-title span {
+  font-size: 11px;
+  color: #7a8493;
+}
+
+/* =========================================================
+   CUSTOMER TEXTAREA
+   NEW
+========================================================= */
+
+.customer-description-input {
+  width: 100%;
+  min-height: 88px;
+  box-sizing: border-box;
+  resize: vertical;
+  border: 1px solid #d7dce3;
+  border-radius: 7px;
+  padding: 10px 11px;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #34363f;
+  outline: none;
+  background: #ffffff;
+}
+
+.customer-description-input::placeholder {
+  color: #9aa3af;
+}
+
+.customer-description-input:focus {
+  border-color: #5279a6;
+  box-shadow:
+    0 0 0 3px rgba(82, 121, 166, 0.08);
+}
+
+.customer-note-input {
+  min-height: 100px;
+}
+
+/* =========================================================
+   CHARACTER COUNT
+   NEW
+========================================================= */
+
+.character-count {
+  text-align: right;
+  margin-top: 6px;
+  font-size: 10px;
+  color: #7b8491;
+}
+
+/* =========================================================
+   CUSTOMER INFO
+   NEW
+========================================================= */
+
+.customer-info-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 10px;
+  border-radius: 7px;
+  background: #fcf3f7;
+  color: #49617d;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.customer-info-message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 11px 0;
+  color: #374151;
+  font-size: 13px;
+}
+
+.price-row strong {
+  color: #191a1f;
+}
+
+.price-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 14px 0;
+}
+
+.total-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 17px;
+  color: #24262c;
+  font-weight: 700;
+}
+
+.total-price-row strong {
+  color: #15803d;
+  font-size: 19px;
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+   NEW
+========================================================= */
+
+.cart-success-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 11px;
+  margin-bottom: 11px;
+  border: 1px solid #a7dfbc;
+  border-radius: 8px;
+  background: #effbf3;
+  color: #166534;
+}
+
+.cart-success-message > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cart-success-message div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cart-success-message strong {
+  font-size: 12px;
+}
+
+.cart-success-message span {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.cart-success-message button {
+  border: 0;
+  background: transparent;
+  color: #3d7650;
+  cursor: pointer;
+}
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+.add-cart-btn {
+  width: 100%;
+  height: 45px;
+  border: 0;
+  border-radius: 7px;
+  background: #393c46;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-cart-btn:hover {
+  background: #2f3139;
+}
+
+/* =========================================================
+   PLACE ORDER
+========================================================= */
+
+.place-order-btn {
+  width: 100%;
+  height: 45px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 7px;
+  background: #15803d;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.place-order-btn:hover {
+  background: #116a34;
+}
+
+.place-order-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SAVE DESIGN
+========================================================= */
+
+.save-design-btn {
+  width: 100%;
+  height: 43px;
+  margin-top: 8px;
+  border: 1px solid #3c3e49;
+  border-radius: 7px;
+  background: white;
+  color: #383a44;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-design-btn:hover {
+  background: #fcf5f8;
+}
+
+/* =========================================================
+   FOOTER FEATURES
+========================================================= */
+
+.features-footer {
+  min-height: 110px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  gap: 20px;
+  padding: 0 35px;
+  background: #fff8fb;
+  border-top: 1px solid #e3e8ef;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #feebf4;
+  color: #393c46;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+}
+
+.feature div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.feature strong {
+  font-size: 12px;
+  color: #24262c;
+}
+
+.feature span {
+  font-size: 10px;
+  color: #718096;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.customizer-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fcf7f9;
+}
+
+.customizer-loading > div {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.customizer-loading h2 {
+  margin: 0 0 8px;
+}
+
+.customizer-loading p {
+  color: #667085;
+}
+
+.customizer-loading button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 7px;
+  background: #393c46;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1250px) {
+  .customizer-main {
+    grid-template-columns:
+      84px
+      minmax(220px, 260px)
+      minmax(0, 1fr)
+      minmax(270px, 320px);
+  }
+
+  .left-toolbar button {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .customizer-title {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .back-product {
+    justify-self: start;
+  }
+
+  .title-center {
+    order: -1;
+  }
+
+  .side-switch {
+    justify-self: center;
+  }
+
+  .customizer-main {
+    grid-template-columns: 90px 280px 1fr;
+  }
+
+  .product-settings {
+    grid-column: 1 / -1;
+    max-height: none;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .features-footer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 25px;
+  }
+}
+
+@media (max-width: 750px) {
+  .customizer-main {
+    display: block;
+  }
+
+  .left-toolbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-right: 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .settings-panel {
+    border-right: 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .product-canvas-wrapper {
+    height: 520px;
+    padding: 18px;
+  }
+
+  .canvas-tools {
+    right: 8px;
+  }
+
+  .features-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .title-center h1 {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 500px) {
+  .left-toolbar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-canvas {
+    height: 450px;
+  }
+
+  .brochure-product-canvas {
+    height: min(450px, 62vh);
+  }
+
+  /* canvas tools â€” bottom horizontal bar */
+  .canvas-tools {
+    top: auto;
+    right: 50%;
+    bottom: 10px;
+    transform: translateX(50%);
+    width: auto;
+    max-width: calc(100vw - 24px);
+    display: flex;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 24px;
+  }
+
+  .product-canvas-wrapper {
+    height: 500px;
+    padding: 16px 12px 76px;
+  }
+
+  .canvas-tools button {
+    min-height: 44px;
+    min-width: 48px;
+    border-bottom: 0;
+    border-right: 1px solid #edf0f3;
+  }
+
+  .canvas-tools button:last-child {
+    border-right: 0;
+  }
+
+  .canvas-tools span {
+    display: none;
+  }
+
+  .product-settings {
+    padding: 18px;
+  }
+
+  .features-footer {
+    padding: 20px;
+  }
+}
+
+/* =========================================================
+   NEED HELP LINK
+========================================================= */
+
+.need-help-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px dashed #eebcd4;
+  border-radius: 8px;
+  background: #fef4f9;
+  color: #bd1265;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.need-help-link:hover {
+  background: #fceaf3;
+  border-color: #bd1265;
+}
+
+/* ============ draft auto-save ============ */
+
+.draft-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #94a3b8;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.draft-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.draft-status.ds-saving::before { background: #f59e0b; }
+.draft-status.ds-saved::before { background: #22c55e; }
+.draft-status.ds-error::before { background: #ef4444; }
+.draft-status.ds-error { color: #b91c1c; }
+
+.draft-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(25, 26, 31, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 16px;
+}
+
+.draft-modal {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.draft-modal h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  color: #25262d;
+}
+
+.draft-modal p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 18px;
+}
+
+.draft-btn {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #25262d;
+  cursor: pointer;
+}
+
+.draft-btn.draft-primary {
+  background: #25262d;
+  color: #fff;
+  border-color: #25262d;
+}
+
+.draft-btn.draft-danger {
+  color: #b91c1c;
+}
+
+/* no-product empty state */
+.no-product-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  gap: 8px;
+}
+
+.no-product-state h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #25262d;
+}
+
+.no-product-state p {
+  margin: 0 0 18px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.no-product-state button {
+  padding: 11px 26px;
+  border: none;
+  border-radius: 9px;
+  background: #25262d;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* favourites toast */
+.fav-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: #25262d;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(37, 38, 45, 0.35);
+  z-index: 1300;
+  animation: favToastIn 0.25s ease;
+}
+
+.fav-toast svg { color: #fb7185; }
+
+@keyframes favToastIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* =====================================================
+   VINYL STICKER - die-cut preview + circular print area
+===================================================== */
+
+.sticker-preview {
+  width: min(58%, 430px);
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 22px 34px rgba(25, 26, 31, 0.2));
+}
+
+.sticker-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* circular printable disc - clip + circular safe guide */
+.print-area-sticker {
+  border-radius: 50%;
+}
+
+.print-area-sticker.editing {
+  border-color: rgba(235, 37, 133, 0.6);
+  border-radius: 50%;
+  /* dashed cut-line sits just inside the edge */
+  outline: 1.5px dashed rgba(25, 26, 31, 0.28);
+  outline-offset: -4px;
+}
+
+/* size / material option cards */
+.size-options-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.size-option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  padding: 12px 14px;
+  text-align: left;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.size-option-card span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #25262d;
+}
+
+.size-option-card small {
+  font-size: 11px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.size-option-card:hover {
+  border-color: #94a3b8;
+}
+
+.size-option-card.size-selected {
+  border-color: #25262d;
+  background: #faf0f5;
+  box-shadow: inset 0 0 0 1px #25262d;
+}
+
+/* custom width/height fields */
+.custom-size-fields {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.custom-size-fields label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.custom-size-fields span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.custom-size-fields input {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #25262d;
+}
+
+.custom-size-fields input:focus {
+  outline: none;
+  border-color: #25262d;
+}
+
+@media (max-width: 768px) {
+  .sticker-preview {
+    width: min(80%, 340px);
+  }
+}
+
+/* gift-set face text â€” use nearly the full zone width */
+.print-area-giftset .design-text {
+  max-width: 96%;
+}
+
+/* gift set box preview */
+.giftset-preview {
+  width: min(62%, 460px);
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 20px 30px rgba(25, 26, 31, 0.18));
+}
+
+.giftset-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* tote bag preview */
+.totebag-preview {
+  width: min(56%, 430px);
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 20px 30px rgba(25, 26, 31, 0.16));
+}
+
+.totebag-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.print-area-tote .design-text {
+  max-width: 96%;
+}
+
+/* embroidered cap preview */
+.cap-preview {
+  width: min(62%, 460px);
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 18px 26px rgba(25, 26, 31, 0.16));
+}
+
+.cap-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* embroidery zone: rounded-rect guide + subtle stitch tint */
+.print-area-cap.editing {
+  border-radius: 10px;
+  outline: none;
+}
+
+.print-area-cap .design-text {
+  max-width: 96%;
+  text-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* shipping box preview */
+.box-preview {
+  width: min(58%, 440px);
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 20px 30px rgba(25, 26, 31, 0.16));
+}
+
+.box-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.print-area-box .design-text {
+  max-width: 96%;
+}
+
+/* letterhead A4 sheet preview */
+.letterhead-preview {
+  width: min(64%, 470px);
+  height: auto;
+  aspect-ratio: 400 / 560;
+  filter: drop-shadow(0 20px 30px rgba(25, 26, 31, 0.16));
+}
+
+.letterhead-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.print-area-letterhead.editing {
+  border-radius: 4px;
+}
+
+.print-area-letterhead .design-text {
+  max-width: 97%;
+}
+
+/* event poster preview - A-series portrait */
+.poster-preview {
+  width: min(62%, 430px);
+  height: auto;
+  aspect-ratio: 400 / 566;
+  filter: drop-shadow(0 20px 30px rgba(25, 26, 31, 0.16));
+}
+
+.poster-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.print-area-poster.editing {
+  border-radius: 4px;
+}
+
+.print-area-poster .design-text {
+  max-width: 98%;
+}
+
+/* paper bag preview */
+.paperbag-preview {
+  width: min(56%, 430px);
+  height: auto;
+  aspect-ratio: 1;
+  filter: drop-shadow(0 20px 30px rgba(25, 26, 31, 0.16));
+}
+
+.paperbag-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.print-area-paperbag .design-text {
+  max-width: 96%;
+}
+
+/* replace-image button in the selected-image panel */
+.replace-logo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  margin: 10px 0 4px;
+  padding: 9px 12px;
+  border: 1.5px solid #25262d;
+  border-radius: 8px;
+  background: #fff;
+  color: #25262d;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.replace-logo-btn:hover {
+  background: #faf0f5;
+}

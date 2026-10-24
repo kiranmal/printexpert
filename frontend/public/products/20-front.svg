@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f7fb"/>
+      <stop offset="1" stop-color="#e4eaf2"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8ecf1"/>
+      <stop offset=".5" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#c9d1dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="500" fill="url(#bg)"/>
+  <ellipse cx="300" cy="432" rx="215" ry="26" fill="#000" opacity="0.1"/>
+  
+    <rect x="195" y="170" width="210" height="220" rx="10" fill="#efe6d8" stroke="#d8c9ac"/>
+    <path d="M235 170 Q235 105 300 105 Q365 105 365 170" fill="none" stroke="#c4b090" stroke-width="9"/>
+    <rect x="195" y="170" width="210" height="18" fill="#d8c9ac" opacity=".7"/>
+    <circle cx="300" cy="270" r="19.599999999999998" fill="none" stroke="#7a6a4d" stroke-width="4.199999999999999"/>
+   <text x="300" y="277" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="19.599999999999998" fill="#7a6a4d">A</text>
+    <rect x="250" y="310" width="100" height="8" rx="3" fill="#7a6a4d" opacity=".7"/>
+</svg>
